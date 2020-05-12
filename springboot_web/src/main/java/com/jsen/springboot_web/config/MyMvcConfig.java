@@ -19,6 +19,7 @@ public class MyMvcConfig extends WebMvcConfigurerAdapter {
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/atJsen").setViewName("index");//访问/atjsen 将跑到index页面
         registry.addViewController("/index.html").setViewName("index");
+        registry.addViewController("/main.html").setViewName("dashboard");
     }
 
     @Bean
