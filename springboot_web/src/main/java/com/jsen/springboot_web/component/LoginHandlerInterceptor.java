@@ -21,6 +21,5 @@ public class LoginHandlerInterceptor implements HandlerInterceptor {
             return false;
         } else
             return true;//放行
-
     }
 }
