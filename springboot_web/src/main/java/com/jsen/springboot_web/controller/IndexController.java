@@ -14,6 +14,12 @@ public class IndexController {
         model.addAttribute("arrs", Arrays.asList("你好", "SpringBoot", "Thymeleaf"));
         return "index";
     }
+        @RequestMapping("/test_02")
+    public String test_o2(Model model) {
+        model.addAttribute("msg", "你好 Thymeleaf");
+        model.addAttribute("arrs", Arrays.asList("你好", "SpringBoot", "Thymeleaf"));
+        return "list";
+    }
 
     public static void main(String[] args) {
         String url = "https://m.166xs.cc/xiaoshuo/210/210261/98975883/";
