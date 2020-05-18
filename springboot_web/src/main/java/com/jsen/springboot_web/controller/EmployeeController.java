@@ -1,6 +1,8 @@
 package com.jsen.springboot_web.controller;
 
+import com.jsen.springboot_web.dao.DepartmentDao;
 import com.jsen.springboot_web.dao.EmployeeDao;
+import com.jsen.springboot_web.entities.Department;
 import com.jsen.springboot_web.entities.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,6 +20,8 @@ import java.util.Collection;
 public class EmployeeController {
     @Autowired
     EmployeeDao employeeDao;
+    @Autowired
+    DepartmentDao departmentDao;
 
     @GetMapping("/emps")
     public String list(Model model) {
@@ -26,4 +30,11 @@ public class EmployeeController {
         return "emp/list";
     }
 
+    @GetMapping("/emp")
+    public String add(Model model) {
+        Collection<Employee> all = employeeDao.getAll();
+        Collection<Department> departments = departmentDao.getDepartments();
+        model.addAttribute("deps", departments);
+        return "emp/add";
+    }
 }
