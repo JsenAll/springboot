@@ -55,6 +55,8 @@ public class EmployeeController {
     public String toEditPage(@PathVariable("id") Integer id, Model model) {
         Employee employee = employeeDao.get(id);
         model.addAttribute("emp", employee);
+        Collection<Department> departments = departmentDao.getDepartments();
+        model.addAttribute("deps", departments);
         return "emp/edit";
 
     }
