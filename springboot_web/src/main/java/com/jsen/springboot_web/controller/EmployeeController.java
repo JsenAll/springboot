@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import java.util.Collection;
 
@@ -45,6 +46,15 @@ public class EmployeeController {
     //添加员工到数据库
     @PostMapping("/emp")
     public String addEmp(Employee employee) {
+        System.out.println(employee.toString());
+        employeeDao.save(employee);
+        //forward:
+        return "redirect:/emps";
+    }
+
+    //添加员工到数据库
+    @PutMapping("/emp")
+    public String editEmp(Employee employee) {
         System.out.println(employee.toString());
         employeeDao.save(employee);
         //forward:

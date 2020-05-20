@@ -74,7 +74,7 @@
                         <td th:text="${#dates.format(es.birth,'yyyy-MM-dd HH:mm')}"></td>
                         <td>
                             <a class="btn btn-sm btn-primary" th:href="@{/emp/}+${es.id}">编辑</a>
-                            <button class="btn btn-sm btn-danger">删除</button>
+                            <button th:attr="" class="btn btn-sm btn-danger">删除</button>
                         </td>
                     </tr>
                     </tbody>
