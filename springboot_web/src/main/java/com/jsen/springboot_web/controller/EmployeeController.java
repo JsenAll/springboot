@@ -51,16 +51,12 @@ public class EmployeeController {
         return "redirect:/emps";
     }
 
-//    @GetMapping("/emp/{id}")
-//    public String toEditPage(@PathVariable("id") Integer id, Model model) {
-////        Employee employee = employeeDao.get(id);
-////        model.addAttribute("emp", employee);
-//        return "emp/add";
-//
-//    }
-     @GetMapping("/emp/{id}")
-    public String toEditPage() {
-        return "emp/add";
+    @GetMapping("/emp/{id}")
+    public String toEditPage(@PathVariable("id") Integer id, Model model) {
+        Employee employee = employeeDao.get(id);
+        model.addAttribute("emp", employee);
+        return "emp/edit";
+
     }
 
 
