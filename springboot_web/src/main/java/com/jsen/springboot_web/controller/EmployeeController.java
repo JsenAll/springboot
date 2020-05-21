@@ -61,6 +61,7 @@ public class EmployeeController {
         return "redirect:/emps";
     }
 
+    //查询员工的id 回显到编辑页面 进行更新
     @GetMapping("/emp/{id}")
     public String toEditPage(@PathVariable("id") Integer id, Model model) {
         Employee employee = employeeDao.get(id);
